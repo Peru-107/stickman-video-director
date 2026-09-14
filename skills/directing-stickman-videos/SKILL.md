@@ -1,13 +1,13 @@
 ---
 name: directing-stickman-videos
-description: Use when turning copy, notes, articles, or topics into one-minute English stick-figure videos, kinetic line-animation explainers, motivational shorts, or Gemini Omni Flash prompt packages.
+description: Use when turning copy, notes, articles, or topics into thirty-second English stick-figure videos, kinetic line-animation explainers, motivational shorts, or Gemini Omni Flash prompt packages.
 ---
 
 # Directing Stickman Videos
 
 ## Core contract
 
-Turn one source into a confirmed director's proposal and then six standalone prompts for approximately ten-second Gemini Omni Flash clips. Preserve the source's meaning while strengthening its hook, progression, and closing callback.
+Turn one source into a confirmed director's proposal and then three standalone prompts for approximately ten-second Gemini Omni Flash clips. Preserve the source's meaning while strengthening its hook, progression, and closing callback.
 
 ## Setup gate
 
@@ -33,7 +33,7 @@ Topic approval, schedule pressure, or approval of an older draft is not approval
 
 ## Output rules
 
-- Target 130–150 English VO words across six clips.
+- Target 65–75 English VO words across three clips.
 - Give each clip three timed beats, at least four relevant visual devices, and a visual change every two to three seconds.
 - Keep character proportions, line weight, theme, and narrator consistent.
 - Limit the video to three saturated accent colors. Name them only with ordinary descriptive words such as vivid red, electric blue, or warm gold.

@@ -6,13 +6,13 @@
 
 # Stickman Video Director
 
-### 把任何想法，变成一支真正“动起来”的一分钟火柴人视频。
+### 把任何想法，变成一支真正“动起来”的三十秒火柴人视频。
 
-一个 Codex Skill，就能把你的文案变成经过确认的英文旁白、以画面为先的导演提案，以及六条可直接生产的 Gemini Omni Flash 提示词。
+一个 Codex Skill，就能把你的文案变成经过确认的英文旁白、以画面为先的导演提案，以及三条可直接生产的 Gemini Omni Flash 提示词。
 
 ![Codex Skill](https://img.shields.io/badge/Codex-Skill-111827?style=flat-square)
 ![Gemini Omni Flash](https://img.shields.io/badge/Gemini-Omni%20Flash-6d28d9?style=flat-square)
-![一分钟视频](https://img.shields.io/badge/Video-≈60%20seconds-0066ff?style=flat-square)
+![三十秒视频](https://img.shields.io/badge/Video-≈30%20seconds-0066ff?style=flat-square)
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
 适合制作发布在 **YouTube Shorts、TikTok、Instagram Reels 和 YouTube** 上的知识解释、励志故事、教育短片与快节奏视觉内容。
@@ -32,7 +32,7 @@
 
 ## 有文案，不等于已经有了视频
 
-一个好想法仍然可能生成一段平淡的动画：一个人物、一个背景，十秒钟里几乎没有新的视觉变化。真正导演完整的一分钟，需要设计开场钩子、控制解释节奏、创造贴合内容的视觉隐喻、推动镜头、连接场景，并在多次独立生成之间锁住一致性。
+一个好想法仍然可能生成一段平淡的动画：一个人物、一个背景，十秒钟里几乎没有新的视觉变化。真正导演完整的三十秒，需要设计开场钩子、控制解释节奏、创造贴合内容的视觉隐喻、推动镜头、连接场景，并在多次独立生成之间锁住一致性。
 
 **Stickman Video Director 会在你消耗生成额度之前，先完成这些制作层面的思考。**
 
@@ -43,7 +43,7 @@
 | 优势 | 你会得到什么 |
 |---|---|
 | **更强的故事结构** | 在保留核心含义的前提下，把原始材料重组成强开场、递进解释和结尾回扣。 |
-| **真正的确认节点** | 先展示清晰可读的六幕导演提案，再生成最终模型提示词；在修改成本最低的时候调整故事。 |
+| **真正的确认节点** | 先展示清晰可读的三幕导演提案，再生成最终模型提示词；在修改成本最低的时候调整故事。 |
 | **丰富且相关的动态画面** | 每段规划三个时间节拍，并加入视觉隐喻、环境变化、镜头运动、文字节点、人物互动、转场、BGM 与音效。 |
 | **完整的生产锁定** | 在每条独立提示词中重复人物、线条粗细、配色、声音、台词、音频、转场和负面约束。 |
 | **真正适配画幅的导演方式** | 针对 `9:16`、`16:9` 或 `1:1` 重新设计构图、镜头路径和文字位置，而不是只替换一个比例标签。 |
@@ -69,8 +69,8 @@
 1. **粘贴**文案、笔记、文章，或者只给出一个主题。
 2. **选择** `16:9`、`9:16` 或 `1:1`，再选择浅色或深色主题。
 3. **确认**包含英文 VO、参考翻译、画面、镜头、转场、BGM 和音效的详细导演提案。
-4. **生成**当前提案获批后的六条独立 Gemini Omni Flash 提示词。
-5. **拼接**六段约十秒的视频，组成一支连贯的一分钟成片。
+4. **生成**当前提案获批后的三条独立 Gemini Omni Flash 提示词。
+5. **拼接**三段约十秒的视频，组成一支连贯的三十秒成片。
 
 画幅、主题、旁白、场景结构、配色、声音或基调都可以修改。发生全局变化时，Skill 会回到提案阶段并重新请求确认。
 
@@ -79,10 +79,10 @@
 ## 最终会得到什么
 
 - 面向创作者的英文标题、核心观点、开场钩子、基调、配色、声音与音乐方向
-- 约 **130–150 个英文单词**的一分钟旁白
-- 六个彼此不同的画面场景，每两到三秒出现一次明显变化
+- 约 **65–75 个英文单词**的三十秒旁白
+- 三个彼此不同的画面场景，每两到三秒出现一次明显变化
 - 精确英文台词与参考翻译
-- 六条带时间节拍和负面约束的独立 Gemini Omni Flash 提示词
+- 三条带时间节拍和负面约束的独立 Gemini Omni Flash 提示词
 - 前后匹配的结尾与开场，让片段之间更容易衔接
 - BGM、音效、一致性和最终拼接建议
 
@@ -90,12 +90,12 @@
 <summary><strong>示例请求</strong></summary>
 
 ```text
-Use $directing-stickman-videos to turn this copy into a one-minute English stickman video:
+Use $directing-stickman-videos to turn this copy into a thirty-second English stickman video:
 
 Gravity bends space and time so strongly around a black hole that even light cannot escape.
 ```
 
-Skill 会先询问缺失的画幅和主题，然后展示六幕导演提案供你确认，确认前不会生成最终模型提示词。
+Skill 会先询问缺失的画幅和主题，然后展示三幕导演提案供你确认，确认前不会生成最终模型提示词。
 
 </details>
 

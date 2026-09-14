@@ -4,7 +4,7 @@ Use this contract for Phase A. Present a readable production proposal and stop f
 
 ## Rewrite the source
 
-Create one natural English narration of 130–150 words for approximately 55–65 seconds of speech.
+Create one natural English narration of 65–75 words for approximately 27–33 seconds of speech.
 
 - Preserve the source's core claim, names, numbers, and factual meaning.
 - Strengthen a weak opening with an immediate hook.
@@ -39,12 +39,12 @@ Choose the pattern that fits the source:
 
 ## Storyboard contract
 
-Produce exactly six approximately ten-second rows:
+Produce exactly three approximately ten-second rows:
 
 | Time | Narrative purpose | Stick-figure scene | Motion, camera, and transition | English VO | Reference translation | BGM / SFX |
 |---|---|---|---|---|---|---|
 
-Give each row a different narrative job. Allocate approximately 18–25 English words per row while keeping sentence boundaries natural.
+Give each row a different narrative job. Allocate approximately 21–25 English words per row while keeping sentence boundaries natural.
 
 ## Visual-density recipe
 
@@ -92,7 +92,7 @@ End each row with a visible interface that the next row inherits: a pose, moving
 
 End Phase A by asking the user to:
 
-- approve the current proposal and generate the six Omni Flash prompts;
+- approve the current proposal and generate the three Omni Flash prompts;
 - revise a named scene or narration passage; or
 - change a global setting such as aspect ratio, theme, palette, voice, or tone.
 
@@ -101,8 +101,8 @@ Do not include final model prompts. A global change invalidates approval and req
 ## Phase A checks
 
 - Source, aspect ratio, and theme are known.
-- English narration is 130–150 words and approximately 55–65 seconds.
-- Exactly six storyboard rows have distinct narrative purposes.
+- English narration is 65–75 words and approximately 27–33 seconds.
+- Exactly three storyboard rows have distinct narrative purposes.
 - Every row has three beats, at least four visual devices, audio, and a transition.
 - Visual change occurs approximately every two to three seconds.
 - No more than three saturated accent colors are used.
