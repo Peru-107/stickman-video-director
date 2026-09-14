@@ -7,7 +7,7 @@ Use this contract only after explicit approval of the current Phase A.
 Deliver these sections in order:
 
 1. Global continuity block
-2. Three standalone English prompts
+2. Standalone English prompts: three for a 30-second video, or six for a 60-second video
 3. Stitching guide
 4. Voice and music continuity note
 
@@ -62,7 +62,7 @@ For light mode, describe the background as a completely flat, uniform, digitally
 
 ## Audio contract
 
-Repeat the same narrator specification in all three prompts. State delivery changes without changing voice identity. Keep narration dominant over BGM and effects.
+Repeat the same narrator specification in every prompt. State delivery changes without changing voice identity. Keep narration dominant over BGM and effects.
 
 Synchronize effects to visible events such as impacts, transformations, energy releases, steps, wipes, or object movement.
 
@@ -81,7 +81,7 @@ Forbid:
 
 ## Stitching guide
 
-List all three clips in order. For every cut, repeat the exact ending state and matching opening state. Include any trim, short audio crossfade, or match-cut note needed for assembly.
+List all clips in order. For every cut, repeat the exact ending state and matching opening state. Include any trim, short audio crossfade, or match-cut note needed for assembly.
 
 ## Audio continuity note
 
@@ -94,7 +94,7 @@ Independent text-only generations may vary in voice and music. Recommend, in ord
 ## Phase B checks
 
 - The user approved the current Phase A.
-- Exactly three standalone prompts are present.
+- Exactly three standalone prompts are present for a 30-second video, or six for a 60-second video, matching the confirmed duration.
 - Each prompt repeats ratio, theme, character, palette, voice, audio, transition, and negative locks.
 - Each prompt has all three timed beats and at least four relevant visual devices.
 - Every ending matches the next opening.

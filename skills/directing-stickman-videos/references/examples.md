@@ -2,15 +2,17 @@
 
 Load this reference only when a concrete end-to-end example resolves ambiguity. Reuse its workflow and level of detail, not its topic, wording, metaphors, or palette.
 
+This example walks the 30-second, three-clip path. A 60-second request follows the identical workflow with six approximately ten-second rows and prompts instead of three, and 130–150 English VO words instead of 65–75; scale the storyboard and production package the same way without changing the narrative pattern, palette, or locks.
+
 ## User source
 
 “你是不是也经常这样？明明什么都还没做，但感觉自己已经累坏了。还没迈出第一步，你的脑子里就已经提前演练了一百种失败的结局。别让想太多毁掉你的生活。”
 
 ## Required setup
 
-Assistant: “请选择视频尺寸（16:9、9:16 或 1:1），以及主题（白底黑火柴人或黑底白火柴人）。”
+Assistant: “请选择视频尺寸（16:9、9:16 或 1:1）、主题（白底黑火柴人或黑底白火柴人），以及视频时长（30 秒或 60 秒）。”
 
-User: “16:9，黑底白火柴人。”
+User: “16:9，黑底白火柴人，30 秒。”
 
 ## Phase A — 导演预案
 

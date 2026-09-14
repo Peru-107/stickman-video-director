@@ -6,13 +6,13 @@
 
 # Stickman Video Director
 
-### Transforme qualquer ideia em um vídeo de bonecos-palito de trinta segundos, cheio de movimento.
+### Transforme qualquer ideia em um vídeo de bonecos-palito de trinta ou sessenta segundos, cheio de movimento.
 
-Uma única Skill do Codex transforma seu texto em uma narração em inglês para aprovação, uma proposta de direção pensada para o visual e três prompts do Gemini Omni Flash prontos para produção.
+Uma única Skill do Codex transforma seu texto em uma narração em inglês para aprovação, uma proposta de direção pensada para o visual e três ou seis prompts do Gemini Omni Flash prontos para produção, dependendo da duração escolhida.
 
 ![Codex Skill](https://img.shields.io/badge/Codex-Skill-111827?style=flat-square)
 ![Gemini Omni Flash](https://img.shields.io/badge/Gemini-Omni%20Flash-6d28d9?style=flat-square)
-![Vídeo de trinta segundos](https://img.shields.io/badge/Video-≈30%20seconds-0066ff?style=flat-square)
+![Vídeo de 30 ou 60 segundos](https://img.shields.io/badge/Video-30s%20or%2060s-0066ff?style=flat-square)
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
 Feita para explicações visuais, histórias motivacionais, vídeos educativos e ensaios dinâmicos no **YouTube Shorts, TikTok, Instagram Reels e YouTube**.
@@ -32,7 +32,7 @@ Feita para explicações visuais, histórias motivacionais, vídeos educativos e
 
 ## Ter um roteiro ainda não significa ter um vídeo
 
-Uma boa ideia pode virar uma animação sem energia: um personagem, um fundo e dez segundos sem nada novo para olhar. Dirigir trinta segundos completos exige construir o gancho, controlar o ritmo da explicação, criar metáforas visuais relevantes, movimentar a câmera, conectar cenas e preservar a continuidade entre gerações separadas.
+Uma boa ideia pode virar uma animação sem energia: um personagem, um fundo e dez segundos sem nada novo para olhar. Dirigir trinta ou sessenta segundos completos exige construir o gancho, controlar o ritmo da explicação, criar metáforas visuais relevantes, movimentar a câmera, conectar cenas e preservar a continuidade entre gerações separadas.
 
 **O Stickman Video Director resolve esse trabalho de produção antes de você gastar créditos de geração.**
 
@@ -43,7 +43,7 @@ Uma boa ideia pode virar uma animação sem energia: um personagem, um fundo e d
 | Vantagem | O que você recebe |
 |---|---|
 | **Arquitetura de história mais forte** | Reorganiza o material em uma abertura marcante, uma explicação progressiva e um fechamento que retoma a ideia inicial, sem perder o sentido central. |
-| **Um ponto real de aprovação** | Mostra uma proposta de direção legível com três cenas antes dos prompts finais. Você ajusta a história enquanto as mudanças ainda custam pouco. |
+| **Um ponto real de aprovação** | Mostra uma proposta de direção legível com três ou seis cenas antes dos prompts finais. Você ajusta a história enquanto as mudanças ainda custam pouco. |
 | **Movimento rico e relevante** | Planeja três momentos em cada clipe, com metáforas visuais, mudanças de ambiente, câmera, texto, interações, transições, BGM e SFX. |
 | **Travas de produção** | Repete personagem, espessura dos traços, paleta, voz, falas, áudio, transição e restrições negativas dentro de cada prompt independente. |
 | **Direção adaptada ao formato** | Refaz composição, trajetória de câmera e posição dos textos para `9:16`, `16:9` ou `1:1`, em vez de apenas trocar a etiqueta da proporção. |
@@ -67,22 +67,22 @@ Não exige API nem dependência de MCP. Instale a Skill, invoque-a e siga o flux
 ## Cole → Escolha → Aprove → Gere → Monte
 
 1. **Cole** seu texto, anotações, um artigo ou apenas um tema.
-2. **Escolha** `16:9`, `9:16` ou `1:1` e depois o tema claro ou escuro.
+2. **Escolha** `16:9`, `9:16` ou `1:1`, o tema claro ou escuro, e a duração de trinta ou sessenta segundos.
 3. **Aprove** uma proposta detalhada com VO em inglês, tradução de referência, visuais, câmera, transições, BGM e SFX.
-4. **Gere** exatamente três prompts independentes do Gemini Omni Flash após aprovar a proposta atual.
-5. **Monte** os três clipes de aproximadamente dez segundos em um vídeo coerente de trinta segundos.
+4. **Gere** exatamente três (trinta segundos) ou seis (sessenta segundos) prompts independentes do Gemini Omni Flash após aprovar a proposta atual.
+5. **Monte** os clipes de aproximadamente dez segundos em um vídeo coerente com a duração escolhida.
 
-Você pode mudar proporção, tema, narração, estrutura das cenas, paleta, voz ou tom. Ao alterar uma configuração global, a Skill volta para a proposta e pede nova aprovação.
+Você pode mudar proporção, tema, duração, narração, estrutura das cenas, paleta, voz ou tom. Ao alterar uma configuração global, a Skill volta para a proposta e pede nova aprovação.
 
 <!-- readme:output -->
 
 ## O que você recebe
 
 - Título em inglês, mensagem central, gancho, tom, paleta, voz e direção musical pensados para criadores
-- Cerca de **65–75 palavras de narração em inglês** para aproximadamente trinta segundos
-- Três cenas visuais diferentes, com uma mudança perceptível a cada dois ou três segundos
+- Cerca de **65–75 palavras** (trinta segundos) ou **130–150 palavras** (sessenta segundos) de narração em inglês
+- Três ou seis cenas visuais diferentes, com uma mudança perceptível a cada dois ou três segundos
 - Falas exatas em inglês e tradução de referência
-- Três prompts independentes do Gemini Omni Flash com momentos cronometrados e restrições negativas
+- Três ou seis prompts independentes do Gemini Omni Flash com momentos cronometrados e restrições negativas
 - Finais e inícios correspondentes para transições mais limpas entre os clipes
 - Orientação de BGM, efeitos sonoros, continuidade e montagem final
 
@@ -90,12 +90,12 @@ Você pode mudar proporção, tema, narração, estrutura das cenas, paleta, voz
 <summary><strong>Exemplo de pedido</strong></summary>
 
 ```text
-Use $directing-stickman-videos to turn this copy into a thirty-second English stickman video:
+Use $directing-stickman-videos to turn this copy into an English stickman video:
 
 Gravity bends space and time so strongly around a black hole that even light cannot escape.
 ```
 
-A Skill primeiro pergunta a proporção e o tema que estiverem faltando. Depois apresenta a proposta de direção com três cenas para aprovação, sem gerar os prompts finais antes da confirmação.
+A Skill primeiro pergunta a proporção, o tema e a duração (trinta ou sessenta segundos) que estiverem faltando. Depois apresenta a proposta de direção, dimensionada para a duração escolhida, para aprovação, sem gerar os prompts finais antes da confirmação.
 
 </details>
 

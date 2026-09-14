@@ -4,7 +4,7 @@ Use this contract for Phase A. Present a readable production proposal and stop f
 
 ## Rewrite the source
 
-Create one natural English narration of 65–75 words for approximately 27–33 seconds of speech.
+Create one natural English narration scaled to the confirmed duration: 65–75 words for approximately 27–33 seconds of speech in a 30-second video, or 130–150 words for approximately 55–65 seconds of speech in a 60-second video.
 
 - Preserve the source's core claim, names, numbers, and factual meaning.
 - Strengthen a weak opening with an immediate hook.
@@ -22,7 +22,7 @@ Present these items in order:
 
 1. English title and reference-language title
 2. Core message and opening hook
-3. Chosen aspect ratio and light/dark theme
+3. Chosen aspect ratio, light/dark theme, and duration (30 or 60 seconds)
 4. Narrator identity, speaking pace, English word count, and estimated duration
 5. Up to three saturated accent colors, named in ordinary language, and what each represents
 6. BGM direction, emotional turn, tone, and narrative arc
@@ -39,7 +39,7 @@ Choose the pattern that fits the source:
 
 ## Storyboard contract
 
-Produce exactly three approximately ten-second rows:
+Produce exactly three approximately ten-second rows for a 30-second video, or six approximately ten-second rows for a 60-second video:
 
 | Time | Narrative purpose | Stick-figure scene | Motion, camera, and transition | English VO | Reference translation | BGM / SFX |
 |---|---|---|---|---|---|---|
@@ -92,17 +92,17 @@ End each row with a visible interface that the next row inherits: a pose, moving
 
 End Phase A by asking the user to:
 
-- approve the current proposal and generate the three Omni Flash prompts;
+- approve the current proposal and generate the matching Omni Flash prompts (three for 30 seconds, six for 60 seconds);
 - revise a named scene or narration passage; or
-- change a global setting such as aspect ratio, theme, palette, voice, or tone.
+- change a global setting such as aspect ratio, theme, duration, palette, voice, or tone.
 
 Do not include final model prompts. A global change invalidates approval and requires a revised Phase A.
 
 ## Phase A checks
 
-- Source, aspect ratio, and theme are known.
-- English narration is 65–75 words and approximately 27–33 seconds.
-- Exactly three storyboard rows have distinct narrative purposes.
+- Source, aspect ratio, theme, and duration are known.
+- English narration matches the chosen duration: 65–75 words and approximately 27–33 seconds for 30 seconds, or 130–150 words and approximately 55–65 seconds for 60 seconds.
+- Exactly three (30-second) or six (60-second) storyboard rows have distinct narrative purposes.
 - Every row has three beats, at least four visual devices, audio, and a transition.
 - Visual change occurs approximately every two to three seconds.
 - No more than three saturated accent colors are used.

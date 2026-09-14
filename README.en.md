@@ -6,13 +6,13 @@
 
 # Stickman Video Director
 
-### Turn any idea into a thirty-second stickman video built to move.
+### Turn any idea into a 30- or 60-second stickman video built to move.
 
-One Codex Skill turns your copy into a confirmed English voiceover, a visual-first director's plan, and three production-ready Gemini Omni Flash prompts.
+One Codex Skill turns your copy into a confirmed English voiceover, a visual-first director's plan, and three or six production-ready Gemini Omni Flash prompts, depending on your chosen duration.
 
 ![Codex Skill](https://img.shields.io/badge/Codex-Skill-111827?style=flat-square)
 ![Gemini Omni Flash](https://img.shields.io/badge/Gemini-Omni%20Flash-6d28d9?style=flat-square)
-![Thirty-second video](https://img.shields.io/badge/Video-≈30%20seconds-0066ff?style=flat-square)
+![30- or 60-second video](https://img.shields.io/badge/Video-30s%20or%2060s-0066ff?style=flat-square)
 ![MIT License](https://img.shields.io/badge/License-MIT-16a34a?style=flat-square)
 
 Built for visual explainers, motivational stories, educational shorts, and fast-moving essays on **YouTube Shorts, TikTok, Instagram Reels, and YouTube**.
@@ -32,7 +32,7 @@ Built for visual explainers, motivational stories, educational shorts, and fast-
 
 ## A script is not yet a video
 
-A good idea can still become a flat animation: one character, one background, and ten seconds with nothing new to look at. Directing a full thirty seconds means shaping the hook, pacing the explanation, inventing relevant visual metaphors, moving the camera, connecting scenes, and protecting continuity across separate generations.
+A good idea can still become a flat animation: one character, one background, and ten seconds with nothing new to look at. Directing a full 30 or 60 seconds means shaping the hook, pacing the explanation, inventing relevant visual metaphors, moving the camera, connecting scenes, and protecting continuity across separate generations.
 
 **Stickman Video Director does that production thinking before you spend generation credits.**
 
@@ -43,7 +43,7 @@ A good idea can still become a flat animation: one character, one background, an
 | Advantage | What it gives you |
 |---|---|
 | **Stronger story architecture** | Reworks raw material into a sharp opening, progressive explanation, and closing callback while preserving the central meaning. |
-| **A real approval checkpoint** | Shows a readable three-scene director's proposal before producing final model prompts. Revise the story while changes are still cheap. |
+| **A real approval checkpoint** | Shows a readable three- or six-scene director's proposal before producing final model prompts. Revise the story while changes are still cheap. |
 | **Dense, relevant motion** | Plans three timed beats per clip, with visual metaphors, environment changes, camera movement, text moments, interactions, transitions, BGM, and SFX. |
 | **Production locks** | Repeats character, line weight, palette, voice, dialogue, audio, transition, and negative constraints inside every standalone prompt. |
 | **Format-aware direction** | Recomposes staging, camera paths, and text placement for `9:16`, `16:9`, or `1:1` instead of merely changing a ratio label. |
@@ -67,22 +67,22 @@ No API or MCP dependency is required. Install the Skill, invoke it, and work thr
 ## Paste → Choose → Approve → Generate → Stitch
 
 1. **Paste** copy, notes, an article, or simply a topic.
-2. **Choose** `16:9`, `9:16`, or `1:1`, then select the light or dark theme.
+2. **Choose** `16:9`, `9:16`, or `1:1`, select the light or dark theme, and pick a 30- or 60-second duration.
 3. **Approve** a detailed director's proposal with the English VO, reference translation, visuals, camera, transitions, BGM, and SFX.
-4. **Generate** exactly three self-contained Gemini Omni Flash prompts after the current proposal is approved.
-5. **Stitch** the three approximately ten-second clips into one coherent, thirty-second video.
+4. **Generate** exactly three (30 seconds) or six (60 seconds) self-contained Gemini Omni Flash prompts after the current proposal is approved.
+5. **Stitch** the approximately ten-second clips into one coherent video matching your chosen duration.
 
-Change the ratio, theme, narration, scene structure, palette, voice, or tone at any point. The Skill returns to the proposal stage and asks for approval again.
+Change the ratio, theme, duration, narration, scene structure, palette, voice, or tone at any point. The Skill returns to the proposal stage and asks for approval again.
 
 <!-- readme:output -->
 
 ## What you receive
 
 - A creator-ready English title, core message, hook, tone, palette, voice, and music direction
-- Approximately **65–75 English words** of narration for about thirty seconds
-- Three visually distinct storyboard scenes with a change every two to three seconds
+- Approximately **65–75 English words** (30 seconds) or **130–150 English words** (60 seconds) of narration
+- Three or six visually distinct storyboard scenes with a change every two to three seconds
 - Exact English dialogue plus a reference translation
-- Three standalone Gemini Omni Flash prompts with timed beats and negative constraints
+- Three or six standalone Gemini Omni Flash prompts with timed beats and negative constraints
 - Matched endings and openings for cleaner transitions between clips
 - BGM, sound-effect, continuity, and final stitching guidance
 
@@ -90,12 +90,12 @@ Change the ratio, theme, narration, scene structure, palette, voice, or tone at 
 <summary><strong>Example request</strong></summary>
 
 ```text
-Use $directing-stickman-videos to turn this copy into a thirty-second English stickman video:
+Use $directing-stickman-videos to turn this copy into an English stickman video:
 
 Gravity bends space and time so strongly around a black hole that even light cannot escape.
 ```
 
-The Skill first asks for the missing aspect ratio and theme. It then presents the three-scene director's proposal for confirmation before generating any final model prompt.
+The Skill first asks for the missing aspect ratio, theme, and duration (30 or 60 seconds). It then presents the director's proposal, sized to your chosen duration, for confirmation before generating any final model prompt.
 
 </details>
 
