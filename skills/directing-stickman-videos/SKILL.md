@@ -17,9 +17,9 @@ Require these before planning:
 - aspect ratio: `16:9`, `9:16`, or `1:1`
 - theme: light (white background, black figure) or dark (black background, white figure)
 - duration: `30 seconds` (three clips) or `60 seconds` (six clips)
-- subtitle placement: `none` (no subtitles), `post-production` (separate SRT file for overlay), or `embedded` (rendered inside video clips)
+- on-screen dialogue text: `none` (no text), or `embedded` (render spoken words as text on the video matching the voiceover)
 
-If anything is missing, ask for all missing items in one concise message and stop. Never select an aspect ratio, theme, duration, or subtitle placement silently. Do not re-ask choices already supplied.
+If anything is missing, ask for all missing items in one concise message and stop. Never select an aspect ratio, theme, duration, or dialogue text placement silently. Do not re-ask choices already supplied.
 
 Urgency, generation cost, client pressure, and requests to "pick normal settings" do not waive this gate.
 
@@ -42,8 +42,8 @@ Topic approval, schedule pressure, or approval of an older draft is not approval
 - Never place hexadecimal, RGB, HSL, Pantone, or other technical color notation inside a model prompt. Treat palette choices as visual art direction, never visible content.
 - For the light theme, request a flat, uniform, digitally pure-white canvas and forbid gray or off-white tint, texture, gradients, shadows, lighting, bloom, fog, and three-dimensional background depth. Do not express the white as a color code.
 - Make each model prompt self-contained and repeat all critical locks.
-- Treat narration as audio-only. Quote exact dialogue and forbid alteration, repetition, captions, or visual transcription in generated clips.
-- **Subtitle handling:** When `subtitle_placement: none`, default generated clips to no visible words, letters, numbers, interface copy, or technical annotations. When `subtitle_placement: post-production`, generate a separate SRT file; forbid all visible text in clips. When `subtitle_placement: embedded`, include approved subtitle text, timing, placement, styling, and contrast specifications in model prompts; forbid all text *except* approved subtitles.
+- Treat narration as audio-only. Quote exact dialogue and forbid alteration, repetition, or visual transcription in the voiceover track itself.
+- **On-screen dialogue text handling:** When `dialogue_text: none`, default generated clips to no visible words, letters, numbers, interface copy, or technical annotations. When `dialogue_text: embedded`, render the spoken voiceover words as on-screen text synchronized to the voiceover timing, with placement, styling, and contrast specifications included in the model prompt.
 - Match every clip ending to the next clip opening.
 - Do not invent unsupported facts, statistics, quotations, or product claims.
 
