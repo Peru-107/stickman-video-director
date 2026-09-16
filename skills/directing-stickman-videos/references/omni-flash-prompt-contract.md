@@ -52,9 +52,27 @@ Use at least four content-relevant visual devices per prompt. Do not introduce n
 
 Quote the approved English VO exactly once as audio-only dialogue. Instruct the model not to add, omit, paraphrase, repeat, reorder, caption, or visually transcribe words.
 
-Default every generated clip to no visible words, letters, numbers, captions, interface copy, palette labels, production annotations, logos, or watermarks. Require icon-only message bubbles, content cards, clocks, meters, and notifications. Put optional approved phrases in a separate post-production overlay list outside the prompts.
+**For `subtitle_placement: none` or `post-production`:** Default every generated clip to no visible words, letters, numbers, captions, interface copy, palette labels, production annotations, logos, or watermarks. Require icon-only message bubbles, content cards, clocks, meters, and notifications. Put optional approved phrases in a separate post-production overlay list outside the prompts.
 
-**Subtitle note:** When subtitles are requested, they are generated as a separate SRT file and applied post-production only — never embedded in generated clips. Instruct the model to forbid all visible text, including any on-screen subtitle rendering.
+**For `subtitle_placement: embedded`:** Include approved subtitle text, timing, placement, styling, and contrast specifications in the model prompt. See **Embedded subtitle specifications** section below. Forbid all text *except* the approved subtitles and essential UI elements (icon-only cards if necessary).
+
+## Embedded subtitle specifications
+
+**When `subtitle_placement: embedded`, include in every model prompt:**
+
+1. **Subtitle list:** Each subtitle, exact wording, and time window (e.g., "Subtitle 1 (0:00–0:04): 'Fall toward a black hole, and gravity stops playing fair.'")
+2. **Placement:** "Position subtitles bottom-center, within safe margin (10% from frame edges). Render all subtitles in this clip with identical placement."
+3. **Text rendering:** "Use clean, simple sans-serif font, [size] pixels equivalent at 720p. Render text in [color] for high contrast against the background."
+4. **Contrast:** "Ensure text remains legible at all times; if scene background changes, adjust text rendering or add subtle background fade/box behind text."
+5. **Timing:** "Each subtitle appears 0.2s before voiceover begins and disappears 0.2s after VO ends for the text."
+6. **Consistency:** "All subtitles in this clip use identical font, size, color, placement, and timing style."
+
+**Example snippet to include in a prompt:**
+> "Render the following subtitles in the bottom-center area of the frame:
+> - Subtitle 1 (0:00–0:04): 'Fall toward a black hole, and gravity stops playing fair.' (position: bottom-center, color: black, font: clean sans-serif, 18px equivalent)
+> - Subtitle 2 (0:04–0:10): 'Spacetime itself bends toward it — and pulls everything, even light, along with it.' (same styling)"
+
+Do not use hexadecimal, RGB, HSL, Pantone, or other technical color notation for subtitle text — use ordinary descriptive color names only.
 
 ## Palette notation
 
@@ -70,8 +88,9 @@ Synchronize effects to visible events such as impacts, transformations, energy r
 
 ## Negative contract
 
-Forbid:
+**For `subtitle_placement: none` or `post-production`:**
 
+Forbid:
 - photorealism and unwanted 3D rendering
 - facial features, hair, or clothing unless approved
 - extra limbs, malformed anatomy, disconnected lines, or changed proportions
@@ -80,6 +99,15 @@ Forbid:
 - unintended characters or irrelevant spectacle
 - visible words, letters, numbers, technical color notation, palette labels, interface copy, captions, subtitles, logos, or watermarks
 - altered, omitted, repeated, reordered, or added dialogue
+
+**For `subtitle_placement: embedded`:**
+
+Forbid everything above *except* the approved subtitle text. Additionally forbid:
+- any text or words *other than* the exact approved subtitles
+- altered, omitted, repeated, reordered, or added subtitle text
+- subtitle text in locations other than the specified placement
+- subtitle styling (font, color, size, timing) that deviates from specifications
+- any unintended captions, labels, or interface copy (subtitles only)
 
 ## Stitching guide
 
@@ -101,7 +129,8 @@ Independent text-only generations may vary in voice and music. Recommend, in ord
 - Each prompt has all three timed beats and at least four relevant visual devices.
 - Every ending matches the next opening.
 - Dialogue exactly matches the approved narration.
-- Dialogue is explicitly audio-only and is never displayed visually.
+- Dialogue is explicitly audio-only and is never displayed visually (unless `subtitle_placement: embedded`).
 - Standalone prompts contain no hexadecimal, RGB, HSL, Pantone, or other technical color notation.
-- Generated scenes contain no visible writing; optional overlay phrases are listed separately for post-production.
-- If subtitles are requested, a separate SRT file is provided with timed phrases (never embedded in generated clips); no subtitle text appears in any model prompt.
+- If `subtitle_placement: none` or `post-production`: Generated scenes contain no visible writing; optional overlay phrases are listed separately for post-production.
+- If `subtitle_placement: post-production`: A separate SRT file is provided with timed phrases (never embedded in generated clips).
+- If `subtitle_placement: embedded`: Each prompt includes exact subtitle text, placement, styling, contrast, and timing specifications; no text appears outside these approved subtitles.

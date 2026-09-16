@@ -41,12 +41,12 @@ Choose the pattern that fits the source:
 
 Produce exactly three approximately ten-second rows for a 30-second video, or six approximately ten-second rows for a 60-second video:
 
-| Time | Narrative purpose | Stick-figure scene | Motion, camera, and transition | English VO | Reference translation | BGM / SFX | Subtitles (if requested) |
+| Time | Narrative purpose | Stick-figure scene | Motion, camera, and transition | English VO | Reference translation | BGM / SFX | Text (if embedded subtitles) |
 |---|---|---|---|---|---|---|---|
 
 Give each row a different narrative job. Allocate approximately 21–25 English words per row while keeping sentence boundaries natural.
 
-When subtitles are requested, populate the **Subtitles** column with timed phrase breaks that match spoken sentence boundaries. Break longer sentences into subtitle-friendly chunks (5–10 words per line, two lines max per subtitle card). Format as time code ranges and text for SRT generation (see **SRT generation** section below).
+When `subtitle_placement: embedded`, populate the **Text** column with timed subtitle cues (breaking at spoken sentence boundaries, 5–10 words per line, two lines max per card) plus placement/styling notes (see **Embedded subtitle styling** section below). When `subtitle_placement: post-production` or `subtitle_placement: none`, leave this column empty or omit it.
 
 ## Visual-density recipe
 
@@ -76,7 +76,9 @@ Keep the background and stick figure monochrome according to the selected theme.
 
 Name colors only with ordinary descriptive language. Do not use hexadecimal, RGB, HSL, Pantone, or other technical color notation anywhere in the proposal or production prompts.
 
-Default the generated video to no visible words, letters, numbers, captions, interface copy, or technical annotations. Make message bubbles, content cards, meters, clocks, and notifications icon-only. Do not embed subtitles in generated clips — when subtitles are requested, generate a separate SRT file for post-production overlay only. After the storyboard, optionally list concise two-to-five-word English overlays for post-production, including their target clips and safe placement; never carry those overlays into the video-generation prompts.
+**For `subtitle_placement: none` or `post-production`:** Default the generated video to no visible words, letters, numbers, captions, interface copy, or technical annotations. Make message bubbles, content cards, meters, clocks, and notifications icon-only. After the storyboard, optionally list concise two-to-five-word English overlays for post-production, including their target clips and safe placement; never carry those overlays into the video-generation prompts.
+
+**For `subtitle_placement: embedded`:** Include subtitle text, timing, placement, and styling specifications in the storyboard's Text column and in all model prompts. See **Embedded subtitle styling** section below.
 
 ## Composition by aspect ratio
 
@@ -90,27 +92,30 @@ Changing ratio requires new staging, camera paths, transition geometry, and over
 
 End each row with a visible interface that the next row inherits: a pose, moving object, filled frame, travel direction, shape, or camera motion. Name both sides of every connection in the proposal.
 
-## SRT generation
+## Embedded subtitle styling
 
-When subtitles are requested, after Phase A approval, generate an SRT file from the subtitle column:
+When `subtitle_placement: embedded`, use these guidelines:
+
+**Placement:** Bottom-center (default for 9:16 / 1:1 vertical ratio) or bottom-third (default for 16:9). Reserve safe margin from frame edge (at least 10% of frame width/height). Never place text over critical action or the main character's center of mass unless unavoidable.
+
+**Readability:** Use high contrast between subtitle color and background. For light-theme videos, use dark text (black or dark gray). For dark-theme videos, use light text (white or off-white). Never use the same color as an accent in the scene.
+
+**Styling:** Simple, clean sans-serif font. Consistent size throughout (recommend 16–24px equivalent for 720p). No decorative fonts, shadows, glows, or outlines unless required for contrast. Text should feel like a natural part of the frame, not an overlay.
+
+**Timing:** Each card appears 0.2s before VO begins and disappears 0.2s after VO ends, creating a slight overlap for legibility (users read ahead slightly).
+
+**Content:** Break at natural pauses: sentence boundaries, clause breaks, or dialogue speaker changes. Aim for 5–10 words per line, two lines max per card, to avoid cluttering the frame.
+
+Include these specifications in the Text column of the storyboard alongside the subtitle text itself.
+
+## SRT generation (post-production mode)
+
+When `subtitle_placement: post-production`, after Phase A approval, generate an SRT file from the Text column:
 
 - Each subtitle index is a sequential number starting at 1.
 - Each timecode spans from the start of the VO phrase to its end, in the format `HH:MM:SS,mmm --> HH:MM:SS,mmm`.
 - Subtitle text is 1–2 lines, breaking at logical word boundaries (5–10 words per line).
 - No formatting codes; plain text only.
-
-Example (for a 30-second video, timestamps for Clip 1):
-```
-1
-00:00:00,000 --> 00:00:04,500
-Fall toward a black hole,
-and gravity stops playing fair.
-
-2
-00:00:04,500 --> 00:00:09,000
-Spacetime itself bends toward it —
-and pulls everything, even light.
-```
 
 Provide the full SRT file as a separate code block after Phase B, or offer it as downloadable text alongside the Omni Flash prompts.
 
@@ -118,23 +123,24 @@ Provide the full SRT file as a separate code block after Phase B, or offer it as
 
 End Phase A by asking the user to:
 
-- approve the current proposal and generate the matching Omni Flash prompts (three for 30 seconds, six for 60 seconds) plus SRT file if subtitles requested;
-- revise a named scene or narration passage; or
-- change a global setting such as aspect ratio, theme, duration, subtitles, palette, voice, or tone.
+- approve the current proposal and generate the matching Omni Flash prompts (three for 30 seconds, six for 60 seconds) plus SRT file if `subtitle_placement: post-production`;
+- revise a named scene, narration passage, or subtitle placement/timing; or
+- change a global setting such as aspect ratio, theme, duration, subtitle placement, palette, voice, or tone.
 
 Do not include final model prompts or SRT file. A global change invalidates approval and requires a revised Phase A.
 
 ## Phase A checks
 
-- Source, aspect ratio, theme, duration, and subtitle preference are known.
+- Source, aspect ratio, theme, duration, and subtitle placement choice are known.
 - English narration matches the chosen duration: 65–75 words and approximately 27–33 seconds for 30 seconds, or 130–150 words and approximately 55–65 seconds for 60 seconds.
 - Exactly three (30-second) or six (60-second) storyboard rows have distinct narrative purposes.
 - Every row has three beats, at least four visual devices, audio, and a transition.
 - Visual change occurs approximately every two to three seconds.
-- No more than three saturated accent colors are used.
+- No more than three saturated accent colors are used (not counting subtitle text color).
 - No technical color notation is present.
-- Any proposed text is clearly separated as a post-production overlay and absent from generated scenes.
-- If subtitles are requested, subtitle column contains timed phrase breaks matching spoken boundaries (5–10 words per line, two lines max).
+- If `subtitle_placement: embedded`, Text column specifies timed phrase breaks, placement (bottom-center / bottom-third), text color/contrast, and font guidance; subtitle text breaks at natural boundaries (5–10 words per line, two lines max).
+- If `subtitle_placement: post-production`, Text column contains timed phrase breaks for SRT generation.
+- If `subtitle_placement: none`, no text is specified anywhere.
 - Every adjacent pair has a named continuity connection.
 - The ending returns to the central message.
 - No unsupported factual detail was added.
