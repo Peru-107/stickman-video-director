@@ -50,9 +50,11 @@ Use at least four content-relevant visual devices per prompt. Do not introduce n
 
 ## Dialogue and visual text
 
-Quote the approved English VO exactly once as audio-only dialogue. Instruct the model not to add, omit, paraphrase, repeat, reorder, caption, subtitle, or visually transcribe words.
+Quote the approved English VO exactly once as audio-only dialogue. Instruct the model not to add, omit, paraphrase, repeat, reorder, caption, or visually transcribe words.
 
-Default every generated clip to no visible words, letters, numbers, captions, subtitles, interface copy, palette labels, production annotations, logos, or watermarks. Require icon-only message bubbles, content cards, clocks, meters, and notifications. Put optional approved phrases in a separate post-production overlay list outside the prompts.
+Default every generated clip to no visible words, letters, numbers, captions, interface copy, palette labels, production annotations, logos, or watermarks. Require icon-only message bubbles, content cards, clocks, meters, and notifications. Put optional approved phrases in a separate post-production overlay list outside the prompts.
+
+**Subtitle note:** When subtitles are requested, they are generated as a separate SRT file and applied post-production only — never embedded in generated clips. Instruct the model to forbid all visible text, including any on-screen subtitle rendering.
 
 ## Palette notation
 
@@ -102,3 +104,4 @@ Independent text-only generations may vary in voice and music. Recommend, in ord
 - Dialogue is explicitly audio-only and is never displayed visually.
 - Standalone prompts contain no hexadecimal, RGB, HSL, Pantone, or other technical color notation.
 - Generated scenes contain no visible writing; optional overlay phrases are listed separately for post-production.
+- If subtitles are requested, a separate SRT file is provided with timed phrases (never embedded in generated clips); no subtitle text appears in any model prompt.

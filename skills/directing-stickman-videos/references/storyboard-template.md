@@ -41,10 +41,12 @@ Choose the pattern that fits the source:
 
 Produce exactly three approximately ten-second rows for a 30-second video, or six approximately ten-second rows for a 60-second video:
 
-| Time | Narrative purpose | Stick-figure scene | Motion, camera, and transition | English VO | Reference translation | BGM / SFX |
-|---|---|---|---|---|---|---|
+| Time | Narrative purpose | Stick-figure scene | Motion, camera, and transition | English VO | Reference translation | BGM / SFX | Subtitles (if requested) |
+|---|---|---|---|---|---|---|---|
 
 Give each row a different narrative job. Allocate approximately 21–25 English words per row while keeping sentence boundaries natural.
+
+When subtitles are requested, populate the **Subtitles** column with timed phrase breaks that match spoken sentence boundaries. Break longer sentences into subtitle-friendly chunks (5–10 words per line, two lines max per subtitle card). Format as time code ranges and text for SRT generation (see **SRT generation** section below).
 
 ## Visual-density recipe
 
@@ -74,7 +76,7 @@ Keep the background and stick figure monochrome according to the selected theme.
 
 Name colors only with ordinary descriptive language. Do not use hexadecimal, RGB, HSL, Pantone, or other technical color notation anywhere in the proposal or production prompts.
 
-Default the generated video to no visible words, letters, numbers, captions, subtitles, interface copy, or technical annotations. Make message bubbles, content cards, meters, clocks, and notifications icon-only. After the storyboard, optionally list concise two-to-five-word English overlays for post-production, including their target clips and safe placement; never carry those overlays into the video-generation prompts.
+Default the generated video to no visible words, letters, numbers, captions, interface copy, or technical annotations. Make message bubbles, content cards, meters, clocks, and notifications icon-only. Do not embed subtitles in generated clips — when subtitles are requested, generate a separate SRT file for post-production overlay only. After the storyboard, optionally list concise two-to-five-word English overlays for post-production, including their target clips and safe placement; never carry those overlays into the video-generation prompts.
 
 ## Composition by aspect ratio
 
@@ -88,19 +90,43 @@ Changing ratio requires new staging, camera paths, transition geometry, and over
 
 End each row with a visible interface that the next row inherits: a pose, moving object, filled frame, travel direction, shape, or camera motion. Name both sides of every connection in the proposal.
 
+## SRT generation
+
+When subtitles are requested, after Phase A approval, generate an SRT file from the subtitle column:
+
+- Each subtitle index is a sequential number starting at 1.
+- Each timecode spans from the start of the VO phrase to its end, in the format `HH:MM:SS,mmm --> HH:MM:SS,mmm`.
+- Subtitle text is 1–2 lines, breaking at logical word boundaries (5–10 words per line).
+- No formatting codes; plain text only.
+
+Example (for a 30-second video, timestamps for Clip 1):
+```
+1
+00:00:00,000 --> 00:00:04,500
+Fall toward a black hole,
+and gravity stops playing fair.
+
+2
+00:00:04,500 --> 00:00:09,000
+Spacetime itself bends toward it —
+and pulls everything, even light.
+```
+
+Provide the full SRT file as a separate code block after Phase B, or offer it as downloadable text alongside the Omni Flash prompts.
+
 ## Confirmation ending
 
 End Phase A by asking the user to:
 
-- approve the current proposal and generate the matching Omni Flash prompts (three for 30 seconds, six for 60 seconds);
+- approve the current proposal and generate the matching Omni Flash prompts (three for 30 seconds, six for 60 seconds) plus SRT file if subtitles requested;
 - revise a named scene or narration passage; or
-- change a global setting such as aspect ratio, theme, duration, palette, voice, or tone.
+- change a global setting such as aspect ratio, theme, duration, subtitles, palette, voice, or tone.
 
-Do not include final model prompts. A global change invalidates approval and requires a revised Phase A.
+Do not include final model prompts or SRT file. A global change invalidates approval and requires a revised Phase A.
 
 ## Phase A checks
 
-- Source, aspect ratio, theme, and duration are known.
+- Source, aspect ratio, theme, duration, and subtitle preference are known.
 - English narration matches the chosen duration: 65–75 words and approximately 27–33 seconds for 30 seconds, or 130–150 words and approximately 55–65 seconds for 60 seconds.
 - Exactly three (30-second) or six (60-second) storyboard rows have distinct narrative purposes.
 - Every row has three beats, at least four visual devices, audio, and a transition.
@@ -108,6 +134,7 @@ Do not include final model prompts. A global change invalidates approval and req
 - No more than three saturated accent colors are used.
 - No technical color notation is present.
 - Any proposed text is clearly separated as a post-production overlay and absent from generated scenes.
+- If subtitles are requested, subtitle column contains timed phrase breaks matching spoken boundaries (5–10 words per line, two lines max).
 - Every adjacent pair has a named continuity connection.
 - The ending returns to the central message.
 - No unsupported factual detail was added.

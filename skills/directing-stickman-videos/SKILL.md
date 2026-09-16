@@ -17,8 +17,9 @@ Require these before planning:
 - aspect ratio: `16:9`, `9:16`, or `1:1`
 - theme: light (white background, black figure) or dark (black background, white figure)
 - duration: `30 seconds` (three clips) or `60 seconds` (six clips)
+- subtitles: yes (generate SRT file with English subtitles) or no (video without subtitles)
 
-If anything is missing, ask for all missing items in one concise message and stop. Never select an aspect ratio, theme, or duration silently. Do not re-ask choices already supplied.
+If anything is missing, ask for all missing items in one concise message and stop. Never select an aspect ratio, theme, duration, or subtitles silently. Do not re-ask choices already supplied.
 
 Urgency, generation cost, client pressure, and requests to "pick normal settings" do not waive this gate.
 
@@ -41,8 +42,9 @@ Topic approval, schedule pressure, or approval of an older draft is not approval
 - Never place hexadecimal, RGB, HSL, Pantone, or other technical color notation inside a model prompt. Treat palette choices as visual art direction, never visible content.
 - For the light theme, request a flat, uniform, digitally pure-white canvas and forbid gray or off-white tint, texture, gradients, shadows, lighting, bloom, fog, and three-dimensional background depth. Do not express the white as a color code.
 - Make each model prompt self-contained and repeat all critical locks.
-- Treat narration as audio-only. Quote exact dialogue and forbid alteration, repetition, captions, subtitles, or visual transcription.
+- Treat narration as audio-only. Quote exact dialogue and forbid alteration, repetition, captions, subtitles, or visual transcription in generated clips.
 - Default generated clips to no visible words, letters, numbers, interface copy, or technical annotations. Make cards and notifications icon-only. Put any optional two-to-five-word overlay in a separate post-production note, never inside the generation prompt.
+- When subtitles are requested, generate a separate SRT file with timed English subtitles (applied post-production, never embedded in generated clips).
 - Match every clip ending to the next clip opening.
 - Do not invent unsupported facts, statistics, quotations, or product claims.
 
